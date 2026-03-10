@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICYOCY Properties | modern real estate</title>
+    <!-- Bootstrap 5 + icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Font: Inter (modern, clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #1e2f4a;
+            line-height: 1.5;
+        }
+        /* modern blue shades */
+        :root {
+            --brand-blue: #0a4b8c;
+            --brand-blue-light: #e2edff;
+            --brand-blue-soft: #f0f7ff;
+            --accent-gold: #d4af37;
+            --whatsapp-green: #25D366;
+        }
+        .text-primary-modern {
+            color: var(--brand-blue) !important;
+        }
+        .bg-soft-blue {
+            background-color: var(--brand-blue-soft);
+        }
+        .bg-light-blue-gradient {
+            background: linear-gradient(145deg, #ffffff 0%, #f4faff 100%);
+        }
+        /* modern navbar */
+        .navbar-modern {
+            background-color: rgba(255,255,255,0.95);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 20px rgba(10,75,140,0.05);
+            border-bottom: 1px solid rgba(10,75,140,0.1);
+        }
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            color: var(--brand-blue) !important;
+        }
+        .nav-link {
+            color: #1e2f4a !important;
+            font-weight: 500;
+            margin: 0 0.2rem;
+            position: relative;
+            transition: 0.2s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0.5rem;
+            right: 0.5rem;
+            height: 2px;
+            background: var(--brand-blue);
+            transform: scaleX(0);
+            transition: transform 0.2s;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+        .phone-header {
+            background: var(--brand-blue-light);
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            color: var(--brand-blue);
+            font-weight: 600;
+            border: 1px solid rgba(10,75,140,0.2);
+        }
+        .whatsapp-header {
+            background: #e8f5e8;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            color: var(--whatsapp-green);
+            font-weight: 600;
+            border: 1px solid rgba(37,211,102,0.2);
+            margin-left: 0.5rem;
+            transition: 0.2s;
+        }
+        .whatsapp-header:hover {
+            background: var(--whatsapp-green);
+            color: white;
+        }
+        /* modern hero */
+        .hero-modern {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 80%);
+            padding: 5rem 2rem;
+            border-radius: 0 0 3rem 3rem;
+            margin-bottom: 4rem;
+            box-shadow: 0 10px 30px rgba(10,75,140,0.1);
+            border-bottom: 1px solid rgba(10,75,140,0.15);
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--brand-blue);
+        }
+        .btn-modern-primary {
+            background-color: var(--brand-blue);
+            border: none;
+            color: white;
+            padding: 0.8rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 8px 18px rgba(10,75,140,0.3);
+            transition: all 0.2s;
+        }
+        .btn-modern-primary:hover {
+            background-color: #0c5ba8;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(10,75,140,0.35);
+        }
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            border: none;
+            color: white;
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 8px 18px rgba(37,211,102,0.25);
+            transition: all 0.2s;
+        }
+        .btn-whatsapp:hover {
+            background-color: #20b859;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(37,211,102,0.35);
+        }
+        .btn-modern-outline {
+            background: transparent;
+            border: 2px solid var(--brand-blue);
+            color: var(--brand-blue);
+            padding: 0.6rem 2.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .btn-modern-outline:hover {
+            background: var(--brand-blue);
+            color: white;
+        }
+        /* section titles */
+        .section-title-modern {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: var(--brand-blue);
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 0.7rem;
+        }
+        .section-title-modern:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--brand-blue);
+            border-radius: 4px;
+        }
+        /* card modern */
+        .card-modern {
+            background: white;
+            border: none;
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            transition: 0.25s ease;
+            height: 100%;
+            border: 1px solid rgba(10,75,140,0.1);
+        }
+        .card-modern:hover {
+            box-shadow: 0 25px 45px rgba(10,75,140,0.12);
+            transform: translateY(-8px);
+            border-color: rgba(10,75,140,0.2);
+        }
+        .project-card-modern {
+            border-radius: 28px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid rgba(10,75,140,0.12);
+            transition: 0.2s;
+            height: 100%;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            cursor: pointer;
+        }
+        .project-card-modern:hover {
+            box-shadow: 0 20px 30px rgba(10,75,140,0.15);
+            transform: scale(1.02);
+        }
+        .project-img-modern {
+            background: linear-gradient(145deg, #dceaff, #ecf3ff);
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-blue);
+            font-size: 1rem;
+            border-bottom: 1px solid rgba(10,75,140,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .project-img-modern i {
+            font-size: 3rem;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+        .project-card-modern:hover .project-img-modern i {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .list-bullet-modern {
+            list-style: none;
+            padding-left: 0;
+        }
+        .list-bullet-modern li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.7rem;
+        }
+        .list-bullet-modern li i {
+            color: var(--brand-blue);
+            font-size: 1.1rem;
+            min-width: 1.5rem;
+        }
+        .badge-modern {
+            background: var(--brand-blue-light);
+            color: var(--brand-blue);
+            padding: 0.6rem 1.5rem;
+            border-radius: 40px;
+            font-weight: 500;
+            border: 1px solid rgba(10,75,140,0.2);
+            font-size: 1rem;
+        }
+        .testimonial-modern {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 15px 30px rgba(10,75,140,0.05);
+            border: 1px solid rgba(10,75,140,0.15);
+            height: 100%;
+            transition: 0.2s;
+        }
+        .testimonial-modern:hover {
+            background: var(--brand-blue-soft);
+        }
+        .contact-form-modern .form-control {
+            border-radius: 16px;
+            border: 1px solid rgba(10,75,140,0.22);
+            padding: 0.9rem 1.2rem;
+            background: white;
+        }
+        .contact-form-modern .form-control:focus {
+            border-color: var(--brand-blue);
+            box-shadow: 0 0 0 4px rgba(10,75,140,0.1);
+        }
+        .footer-modern {
+            background: #14273e; /* deep navy */
+            color: white;
+            border-radius: 3rem 3rem 0 0;
+            margin-top: 4rem;
+            padding: 3rem 0 2rem;
+        }
+        .footer-modern a {
+            color: #b6d0f0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer-modern a:hover {
+            color: white;
+        }
+        hr {
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        /* projects page specific */
+        .projects-hero {
+            background: linear-gradient(135deg, #e2edff, #ffffff);
+            padding: 4rem 0;
+            border-radius: 0 0 3rem 3rem;
+            margin-bottom: 3rem;
+        }
+        .feature-tag {
+            background: rgba(10,75,140,0.08);
+            color: var(--brand-blue);
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        /* floating WhatsApp widget */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.25s;
+            z-index: 999;
+            border: 3px solid white;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            background-color: #20b859;
+            transform: scale(1.1);
+            color: white;
+        }
+        .whatsapp-float i {
+            font-size: 2.8rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/2348036064727?text=Hello%20ICYOCY%20Properties!%20I'm%20interested%20in%20your%20properties." class="whatsapp-float" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- modern header with WhatsApp -->
+<nav class="navbar navbar-expand-lg navbar-modern sticky-top py-3">
+    <div class="container">
+        <a class="navbar-brand" href="#"><i class="bi bi-building me-2"></i>ICYOCY</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarModern">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarModern">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Solutions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <div class="phone-header d-flex align-items-center me-2">
+                    <i class="bi bi-telephone-fill me-2"></i> +234 803 606 4727
+                </div>
+                <a href="https://wa.me/2348036064727?text=Hello%20ICYOCY%20Properties!%20I'm%20interested%20in%20your%20properties." class="whatsapp-header d-flex align-items-center text-decoration-none" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i> Chat
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero with strong "view project" message + WhatsApp CTA -->
+    <section class="hero-modern">
+        <div class="container text-center">
+            <span class="badge-modern mb-4 d-inline-block">✦ prime locations</span>
+            <h1 class="hero-title">Discover your dream space<br>with <span style="color: var(--accent-gold);">ICYOCY</span></h1>
+            <p class="fs-4 text-secondary mb-5">Modern Living. Prime Location. Smart Investment.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#featured-projects" class="btn btn-modern-primary btn-lg">View Projects <i class="bi bi-arrow-right-short ms-2"></i></a>
+                <a href="https://wa.me/2348036064727?text=Hello%20ICYOCY%20Properties!%20I'm%20interested%20in%20learning%20more%20about%20your%20properties." class="btn btn-whatsapp btn-lg" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i> WhatsApp us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPANDED PROJECT SHOWCASE ========== -->
+    <div class="container" id="featured-projects">
+        <!-- section title with emphasis on view project -->
+        <div class="text-center mb-5">
+            <span class="badge-modern mb-3">our portfolio</span>
+            <h2 class="display-5 fw-semibold" style="color: var(--brand-blue);">Featured developments</h2>
+            <p class="fs-5 text-secondary">Explore our completed projects — each designed with excellence</p>
+        </div>
+
+        <!-- project grid - expanded with 6 projects (more details) -->
+        <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-house-door"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">luxury</span>
+                            <small class="text-secondary">completed 2023</small>
+                        </div>
+                        <h4 class="h5 fw-bold">5 Bed Duplex + BQ</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> John Okafor Estate, Agungi</p>
+                        <p class="mb-3">Fully detached duplex with modern finishes, private garden, and staff quarters.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%205%20Bed%20Duplex%20at%20John%20Okafor%20Estate." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-building"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">luxury</span>
+                            <small class="text-secondary">completed 2024</small>
+                        </div>
+                        <h4 class="h5 fw-bold">12 Units 1-Bed Luxury</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Hon. Saheed Bankole St, Ologolo</p>
+                        <p class="mb-3">Contemporary one-bedroom apartments with kitchen islands and 24/7 security.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%2012%20Units%20Luxury%20Apartments." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-house-heart"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">signature</span>
+                            <small class="text-secondary">completed 2023</small>
+                        </div>
+                        <h4 class="h5 fw-bold">5 Bed Detached + 2 BQ</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Osapa London, Lagos</p>
+                        <p class="mb-3">Elegant five-bedroom with two-room BQ, premium fittings, gated community.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%205%20Bed%20Detached%20at%20Osapa%20London." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-grid"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">contemporary</span>
+                            <small class="text-secondary">completed 2022</small>
+                        </div>
+                        <h4 class="h5 fw-bold">4 Bed Semi-Detached</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Oba Amusa Estate, Agungi</p>
+                        <p class="mb-3">Semi-detached duplexes with modern cabinetry, built-in wardrobes.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%204%20Bed%20Semi-Detached%20at%20Oba%20Amusa." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-diagram-3"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">family</span>
+                            <small class="text-secondary">completed 2023</small>
+                        </div>
+                        <h4 class="h5 fw-bold">4 Bed Detached Duplex</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Madam Bilikisu St, Ologolo</p>
+                        <p class="mb-3">Spacious four-bedroom fully detached with modern kitchen island.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%204%20Bed%20Detached%20on%20Madam%20Bilikisu%20Street." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="project-card-modern">
+                    <div class="project-img-modern"><i class="bi bi-tree"></i></div>
+                    <div class="project-content">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="feature-tag">bespoke</span>
+                            <small class="text-secondary">ongoing</small>
+                        </div>
+                        <h4 class="h5 fw-bold">Custom Home Builds</h4>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> client's land / Lekki</p>
+                        <p class="mb-3">From scratch design & construction – we build exactly to your requirements.</p>
+                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20discussing%20a%20custom%20home%20build." class="btn btn-whatsapp btn-sm w-100" target="_blank">
+                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- extra CTA to view more projects + WhatsApp -->
+        <div class="text-center my-5">
+            <h4 class="fw-normal mb-4">Want to see more? <span class="fw-bold text-primary-modern">We have 20+ completed projects</span></h4>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="#" class="btn btn-modern-primary btn-lg">Load more projects <i class="bi bi-arrow-repeat ms-2"></i></a>
+                <a href="https://wa.me/2348036064727?text=Hello%2C%20I'd%20like%20to%20see%20more%20projects%20and%20get%20more%20information." class="btn btn-whatsapp btn-lg" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- rest of the homepage with WhatsApp integration -->
+    <div class="container">
+        <!-- about + vision/mission in modern grid (brief) -->
+        <section class="mb-5">
+            <h2 class="section-title-modern">About us</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <p class="fs-5"><span class="fw-bold text-primary-modern">ICYOCY LIMITED</span> was established in 2016 as a dynamic real estate development and management company based in Lekki Phase 1, Lagos.</p>
+                    <ul class="list-bullet-modern mt-3">
+                        <li><i class="bi bi-check-circle-fill"></i> Property Development</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Property Management</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Real Estate Consulting</li>
+                    </ul>
+                    <a href="https://wa.me/2348036064727?text=Hello%2C%20I'd%20like%20to%20know%20more%20about%20your%20services." class="btn btn-whatsapp mt-3" target="_blank">
+                        <i class="bi bi-whatsapp me-2"></i> Ask about our services
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card-modern">
+                                <i class="bi bi-eye fs-1 text-primary-modern mb-3"></i>
+                                <h4 class="h5 fw-bold">Vision</h4>
+                                <p class="mb-0">To be a leading force in transforming the Nigerian real estate landscape.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-modern">
+                                <i class="bi bi-bullseye fs-1 text-primary-modern mb-3"></i>
+                                <h4 class="h5 fw-bold">Mission</h4>
+                                <p class="mb-0">Provide clients the ease to own quality luxury homes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- marketing banner with WhatsApp CTA -->
+        <section class="bg-soft-blue p-5 rounded-5 mb-5 text-center">
+            <h2 class="display-6 fw-semibold text-primary-modern">FIND YOUR PERFECT HOME WITH US</h2>
+            <p class="fs-4 mb-4">Smart Investments. Quality Living. Prime locations across Lagos.</p>
+            <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20looking%20for%20my%20perfect%20home%20in%20Lagos." class="btn btn-whatsapp btn-lg" target="_blank">
+                <i class="bi bi-whatsapp me-2"></i> Start conversation
+            </a>
+        </section>
+
+        <!-- solutions & why choose etc -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-6">
+                <div class="card-modern">
+                    <h3 class="h4 fw-bold mb-3"><i class="bi bi-people me-2 text-primary-modern"></i>Who are our customers?</h3>
+                    <ul class="list-bullet-modern">
+                        <li><i class="bi bi-person-check"></i> <strong>Homebuyers</strong> – secure homes</li>
+                        <li><i class="bi bi-bar-chart"></i> <strong>Investors</strong> – profitable opportunities</li>
+                        <li><i class="bi bi-tree"></i> <strong>Developers & Landowners</strong></li>
+                        <li><i class="bi bi-briefcase"></i> <strong>Corporate Clients</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-modern">
+                    <h3 class="h4 fw-bold mb-3"><i class="bi bi-star me-2 text-primary-modern"></i>Why choose us</h3>
+                    <ul class="list-bullet-modern">
+                        <li><i class="bi bi-pin-map"></i> Strategic Locations</li>
+                        <li><i class="bi bi-cash-stack"></i> Luxury & affordable</li>
+                        <li><i class="bi bi-lightning"></i> Fast Transactions</li>
+                        <li><i class="bi bi-shield-lock"></i> Transparency & Trust</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- property features & pricing brief with WhatsApp -->
+        <section class="mb-5">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="h4 fw-bold">Property features</h3>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <span class="badge-modern">Spacious Bedrooms</span>
+                        <span class="badge-modern">Built-In Wardrobe</span>
+                        <span class="badge-modern">Modern Kitchen</span>
+                        <span class="badge-modern">Kitchen Island</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3 class="h4 fw-bold">Price packages</h3>
+                    <div class="d-flex gap-3 mt-3 flex-wrap">
+                        <div class="bg-light p-3 rounded-4"><small>Starter</small><br><span class="fw-bold">from 5% down</span></div>
+                        <div class="bg-light p-3 rounded-4"><small>Family</small><br><span class="fw-bold">3-bed</span></div>
+                        <div class="bg-light p-3 rounded-4"><small>From</small><br><span class="fw-bold">₦100M</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="https://wa.me/2348036064727?text=Hello%2C%20I'd%20like%20to%20know%20more%20about%20pricing%20and%20packages." class="btn btn-whatsapp" target="_blank">
+                    <i class="bi bi-whatsapp me-2"></i> Ask about pricing
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="mb-5">
+            <h2 class="section-title-modern">Testimonials</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial-modern">
+                        <i class="bi bi-quote fs-1 text-primary-modern opacity-50"></i>
+                        <p class="fst-italic">“Buying a home felt effortless thanks to their guidance.”</p>
+                        <p class="fw-bold mb-0">— Grace Kalu</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="testimonial-modern">
+                        <i class="bi bi-quote fs-1 text-primary-modern opacity-50"></i>
+                        <p class="fst-italic">“Professional and strategic. My property sold quickly.”</p>
+                        <p class="fw-bold mb-0">— Armah Anyebe</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact modern with WhatsApp emphasis -->
+        <section class="mb-5">
+            <h2 class="section-title-modern">Contact us</h2>
+            <div class="row g-5">
+                <div class="col-md-5">
+                    <p><i class="bi bi-geo-alt-fill text-primary-modern me-3"></i> Plot 1 Victoria Arobeike Street, Lekki Phase 1</p>
+                    <p><i class="bi bi-telephone-fill text-primary-modern me-3"></i> +234 803 606 4727</p>
+                    <p><i class="bi bi-whatsapp text-primary-modern me-3" style="color: var(--whatsapp-green);"></i> <strong>WhatsApp:</strong> +234 803 606 4727</p>
+                    <p><i class="bi bi-instagram text-primary-modern me-3"></i> @icyocy_properties</p>
+                    <a href="https://wa.me/2348036064727?text=Hello%20ICYOCY%20Properties!%20I%20have%20a%20question." class="btn btn-whatsapp btn-lg mt-3" target="_blank">
+                        <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
+                    </a>
+                </div>
+                <div class="col-md-7">
+                    <form class="contact-form-modern row g-3">
+                        <div class="col-md-6"><input class="form-control" placeholder="Name"></div>
+                        <div class="col-md-6"><input class="form-control" placeholder="Email"></div>
+                        <div class="col-12"><textarea class="form-control" rows="3" placeholder="Message"></textarea></div>
+                        <div class="col-12"><button class="btn btn-modern-primary px-5">Send</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- modern footer dark blue with WhatsApp -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <h4 class="fw-semibold text-white"><i class="bi bi-building me-2"></i>ICYOCY PROPERTIES</h4>
+                    <p class="text-light opacity-75">Real Estate Development Management & Consulting</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled d-flex flex-wrap gap-4">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Solutions</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 text-md-end">
+                    <a href="https://wa.me/2348036064727?text=Hello%20ICYOCY%20Properties!" class="text-white text-decoration-none" target="_blank">
+                        <i class="bi bi-whatsapp me-2 fs-4"></i>
+                    </a>
+                    <p class="mb-0 text-white mt-2">© ICYOCY Limited</p>
+                </div>
+            </div>
+            <hr>
+            <p class="small text-light opacity-50 text-center mb-0">more on view project • WhatsApp integrated</p>
+        </div>
+    </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
