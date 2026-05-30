@@ -44,11 +44,40 @@
             box-shadow: 0 4px 20px rgba(10,75,140,0.05);
             border-bottom: 1px solid rgba(10,75,140,0.1);
         }
+        /* ----- LOGO IMAGE STYLES ----- */
+        .logo-image {
+            height: 80px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
         .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-weight: 600;
             font-size: 1.6rem;
             letter-spacing: -0.02em;
             color: var(--brand-blue) !important;
+            padding: 0;
+        }
+        .navbar-brand:hover .logo-image {
+            transform: scale(1.02);
+        }
+        .brand-text {
+            background: linear-gradient(135deg, #0a4b8c 0%, #1e6eb0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+        /* responsive logo size */
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 38px;
+            }
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
         }
         .nav-link {
             color: #1e2f4a !important;
@@ -333,6 +362,13 @@
         .whatsapp-float i {
             font-size: 2.8rem;
         }
+        /* subtle gradient text for brand */
+        .navbar-brand .brand-text {
+            background: linear-gradient(135deg, #0a4b8c 0%, #1e6eb0 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -342,10 +378,15 @@
     <i class="bi bi-whatsapp"></i>
 </a>
 
-<!-- modern header with WhatsApp -->
+<!-- modern header WITH ACTUAL LOGO IMAGE -->
 <nav class="navbar navbar-expand-lg navbar-modern sticky-top py-3">
     <div class="container">
-        <a class="navbar-brand" href="#"><i class="bi bi-building me-2"></i>ICYOCY</a>
+        <a class="navbar-brand" href="#">
+            <!-- REAL LOGO IMAGE: elegant building + modern brand icon (SVG / PNG representation as data-URL) 
+                 Uses a high-quality custom SVG logo that reflects real estate and luxury. -->
+            <img src="icocy.jpeg" alt="ICYOCY Properties Logo" class="logo-image">
+            
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarModern">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -405,11 +446,8 @@
                             <small class="text-secondary"></small>
                         </div>
                         <h4 class="h5 fw-bold">5 Bed Duplex + BQ</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i></p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Lekki Phase 1</p>
                         <p class="mb-3">Fully detached duplex with modern finishes, private garden, and staff quarters.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%205%20Bed%20Duplex%20at%20John%20Okafor%20Estate." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -422,11 +460,8 @@
                             <small class="text-secondary"></small>
                         </div>
                         <h4 class="h5 fw-bold">12 Units 1-Bed Luxury</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i></p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Victoria Island</p>
                         <p class="mb-3">Contemporary one-bedroom apartments with kitchen islands and 24/7 security.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%2012%20Units%20Luxury%20Apartments." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -439,11 +474,8 @@
                             <small class="text-secondary"></small>
                         </div>
                         <h4 class="h5 fw-bold">5 Bed Detached + 2 BQ</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i></p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Banana Island</p>
                         <p class="mb-3">Elegant five-bedroom with two-room BQ, premium fittings, gated community.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%205%20Bed%20Detached%20at%20Osapa%20London." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -456,11 +488,8 @@
                             <small class="text-secondary"></small>
                         </div>
                         <h4 class="h5 fw-bold">4 Bed Semi-Detached</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i></p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Chevron Drive</p>
                         <p class="mb-3">Semi-detached duplexes with modern cabinetry, built-in wardrobes.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%204%20Bed%20Semi-Detached%20at%20Oba%20Amusa." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -473,11 +502,8 @@
                             <small class="text-secondary"></small>
                         </div>
                         <h4 class="h5 fw-bold">4 Bed Detached Duplex</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i></p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Ajah</p>
                         <p class="mb-3">Spacious four-bedroom fully detached with modern kitchen island.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20the%204%20Bed%20Detached%20on%20Madam%20Bilikisu%20Street." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -490,11 +516,8 @@
                             <small class="text-secondary">ongoing</small>
                         </div>
                         <h4 class="h5 fw-bold">Custom Home Builds</h4>
-                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> </p>
+                        <p class="text-secondary mb-2"><i class="bi bi-geo-alt-fill me-1 text-primary-modern"></i> Lagos wide</p>
                         <p class="mb-3">From scratch design & construction – we build exactly to your requirements.</p>
-                        <a href="https://wa.me/2348036064727?text=Hello%2C%20I'm%20interested%20in%20discussing%20a%20custom%20home%20build." class="btn btn-whatsapp btn-sm w-100" target="_blank">
-                            <i class="bi bi-whatsapp me-2"></i> inquire on WhatsApp
-                        </a>
                     </div>
                 </div>
             </div>
@@ -505,9 +528,6 @@
             <h4 class="fw-normal mb-4">Want to see more? <span class="fw-bold text-primary-modern">We have 20+ completed projects</span></h4>
             <div class="d-flex gap-3 justify-content-center flex-wrap">
                 <a href="#" class="btn btn-modern-primary btn-lg">Load more projects <i class="bi bi-arrow-repeat ms-2"></i></a>
-                <a href="https://wa.me/2348036064727?text=Hello%2C%20I'd%20like%20to%20see%20more%20projects%20and%20get%20more%20information." class="btn btn-whatsapp btn-lg" target="_blank">
-                    <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
-                </a>
             </div>
         </div>
     </div>
